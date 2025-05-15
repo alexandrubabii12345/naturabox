@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaturaBox</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="icons d-flex align-items-center">
+      <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="mailto:info@fuelbox.ro"><i class="bi bi-envelope"></i></a>
+      <span class="text-white ms-3">| 0744 855 543</span>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white py-2">
+  <div class="container position-relative">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">ACASĂ</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="despre.html">DESPRE</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="comanda.html">COMANDĂ</a></li>
+      </ul>
+      <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="index.html">
+        <div class="d-flex align-items-center">
+          <div class="ms-2 text-center">
+            <strong style="color: #2b6824; font-size: 1.8rem;">Natura</strong><strong style="color:#91cc04; font-size: 1.8rem;">Box</strong>
+          </div>
+        </div>
+      </a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+        <li class="nav-item"><a class="nav-link fw-bold" href="menubox.html" target="_blank">MENUBOX</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="questionbox.html" target="_blank">QUESTIONBOX</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="order-section py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Comandă-ți cutia <span style="color:#91cc04">NaturaBox</span></h2>
+
+    <form id="order-form" class="row g-4 justify-content-center shadow rounded-4 p-4 bg-white">
+      <div class="col-md-6">
+        <label for="menu-select" class="form-label">Alege tipul de meniu</label>
+        <select class="form-select form-select-lg" id="menu-select" required>
+          <option value="">Selectează un meniu</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="calories-select" class="form-label">Alege varianta calorică</label>
+        <select class="form-select form-select-lg" id="calories-select" required disabled>
+          <option value="">Alege mai întâi un meniu</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="persons" class="form-label">Număr de persoane</label>
+        <input type="number" min="1" class="form-control form-control-lg" id="persons" value="1">
+      </div>
+
+      <div class="col-md-6">
+        <label for="days" class="form-label">Număr de zile dorite</label>
+        <input type="number" min="1" max="60" class="form-control form-control-lg" id="days" value="5">
+      </div>
+
+      <div class="col-12 text-center">
+        <div id="cost-box" class="mb-3 fs-4 fw-bold"></div>
+        <button type="submit" class="btn btn-lg px-5 py-2 rounded-pill text-white" style="background-color: #91cc04;">Plasează comanda</button>
+      </div>
+    </form>
+
+    <p class="mt-3 text-muted">Livrările se efectuează de <strong>luni până vineri</strong>. Comenzile plasate în weekend se procesează luni.</p>
+  </div>
+</section>
+
+<script>
+// boxesData definit global
+const boxesData = [
+  { title: 'SLIMBOX', subtitle: '2 mese & 1 gustare/zi', kcal: ['1000', '1400', '1800'], image: 'img/lightbox.png' },
+  { title: 'EASYBOX', subtitle: '3 mese & 1 gustare/zi', kcal: ['1400', '1800', '2200'], image: 'img/logicbox.png' },
+  { title: 'GREENBOX', subtitle: '3 mese & 1 gustare/zi', kcal: ['1400', '1800', '2200'], image: 'img/veganbox.png' },
+  { title: 'VEGGIEBOX', subtitle: '3 mese & snack', kcal: ['1500'], image: 'img/veggiebox.jpg' },
+  { title: 'MUSCLEBOX', subtitle: '4 mese', kcal: ['2600'], image: 'img/sportbox.jpg' }
+];
+
+const menuSelect = document.getElementById('menu-select');
+const kcalSelect = document.getElementById('calories-select');
+const personsInput = document.getElementById('persons');
+const daysInput = document.getElementById('days');
+const costBox = document.getElementById('cost-box');
+
+const menuPrices = {
+  SLIMBOX: 30,
+  EASYBOX: 35,
+  GREENBOX: 38,
+  VEGGIEBOX: 34,
+  MUSCLEBOX: 42
+};
+
+boxesData.forEach(box => {
+  const option = document.createElement('option');
+  option.value = box.title;
+  option.textContent = `${box.title} - ${box.subtitle} (${menuPrices[box.title]} lei/zi)`;
+  menuSelect.appendChild(option);
+});
+
+menuSelect.addEventListener('change', function () {
+  kcalSelect.innerHTML = '<option value="">Alege o opțiune</option>';
+  const selectedBox = boxesData.find(b => b.title === this.value);
+  if (selectedBox) {
+    kcalSelect.disabled = false;
+    selectedBox.kcal.forEach(k => {
+      const opt = document.createElement('option');
+      opt.value = k;
+      opt.textContent = `${k} kcal`;
+      kcalSelect.appendChild(opt);
+    });
+  } else {
+    kcalSelect.disabled = true;
+  }
+  updateCost();
+});
+
+function calcDiscount(days) {
+  if (days >= 30) return 0.85;
+  if (days >= 15) return 0.90;
+  if (days >= 10) return 0.95;
+  return 1;
+}
+
+function updateCost() {
+  const persons = parseInt(personsInput.value) || 1;
+  const days = parseInt(daysInput.value) || 1;
+  const menu = menuSelect.value;
+  const discount = calcDiscount(days);
+  const pricePerDay = menuPrices[menu] || 0;
+  const total = persons * days * pricePerDay * discount;
+  if (costBox) costBox.textContent = `${Math.round(total)} lei`;
+}
+
+function handleOrder(event) {
+  event.preventDefault();
+  const menu = menuSelect.value;
+  const kcal = kcalSelect.value;
+  const persons = parseInt(personsInput.value) || 1;
+  const days = parseInt(daysInput.value) || 1;
+  const discount = calcDiscount(days);
+  const pricePerDay = menuPrices[menu] || 0;
+  const total = Math.round(persons * days * pricePerDay * discount);
+
+  const queryParams = new URLSearchParams({ menu, kcal, persons, days, total });
+  window.location.href = `checkout.html?${queryParams.toString()}`;
+}
+
+personsInput.addEventListener('input', updateCost);
+daysInput.addEventListener('input', updateCost);
+kcalSelect.addEventListener('change', updateCost);
+document.getElementById('order-form').addEventListener('submit', handleOrder);
+updateCost();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

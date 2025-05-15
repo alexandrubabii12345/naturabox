@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaturaBox</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="style.css" />
+
+
+</head>
+<body>
+
+
+<!-- Topbar -->
+<div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="icons d-flex align-items-center">
+        <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="mailto:info@fuelbox.ro"><i class="bi bi-envelope"></i></a>
+        <span class="text-white ms-3">| 0744 855 543</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white py-2">
+    <div class="container position-relative">
+  
+      <!-- Hamburger pentru mobil -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Meniu stânga -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+          <li class="nav-item"><a class="nav-link fw-bold" href="index.html">ACASĂ</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="despre.html">DESPRE</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="comanda.html">COMANDĂ</a></li>
+        </ul>
+  
+        <!-- Logo centrat -->
+        <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="index.html">
+            <div class="d-flex align-items-center">
+              <div class="ms-2 text-center">
+                <strong style="color: #2b6824; font-size: 1.8rem;">Natura</strong><strong style="color:#91cc04; font-size: 1.8rem;">Box</strong>
+              </div>
+            </div>
+          </a>
+  
+        <!-- Meniu dreapta -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+          <li class="nav-item"><a class="nav-link fw-bold" href="menubox.html" target="_blank">MENUBOX</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="questionbox.html" target="_blank">QUESTIONBOX</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container py-5 bg-white rounded-4 shadow-sm">
+    <h2 class="text-center mb-4">Meniu Săptămânal - <span id="menu-title">SlimBox</span></h2>
+  
+    <div class="d-flex justify-content-center mb-4 gap-3">
+      <button class="btn btn-outline-success rounded-pill px-4" onclick="loadMenu('SlimBox')">SlimBox</button>
+      <button class="btn btn-outline-success rounded-pill px-4" onclick="loadMenu('EasyBox')">EasyBox</button>
+      <button class="btn btn-outline-success rounded-pill px-4" onclick="loadMenu('GreenBox')">GreenBox</button>
+      <button class="btn btn-outline-success rounded-pill px-4" onclick="loadMenu('VeggieBox')">VeggieBox</button>
+      <button class="btn btn-outline-success rounded-pill px-4" onclick="loadMenu('MuscleBox')">MuscleBox</button>
+    </div>
+  
+    <div class="row pt-3" id="menu-content">
+      <!-- Se va popula din JavaScript -->
+    </div>
+  </div>
+  
+  <script>
+  const menuData = {
+    SlimBox: {
+      LUNI: {
+        pranz: "Piept de pui cu orez și broccoli",
+        pranzIng: "piept de pui, orez brun, broccoli, ulei de măsline",
+        gustare: "Baton proteic",
+        gustareIng: "fulgi de ovăz, migdale, semințe, miere",
+        cina: "Supă cremă de linte",
+        cinaIng: "linte roșie, ceapă, morcov, usturoi, condimente"
+      },
+      MARTI: {
+        pranz: "Somon cu quinoa și sparanghel",
+        pranzIng: "somon, quinoa, sparanghel, lămâie, ulei de măsline",
+        gustare: "Iaurt cu semințe",
+        gustareIng: "iaurt grecesc, semințe de in, semințe de chia",
+        cina: "Salată cu hummus și crutoane integrale",
+        cinaIng: "salată verde, hummus, pâine integrală, roșii cherry"
+      },
+      MIERCURI: {
+        pranz: "Tocăniță de legume cu mămăliguță",
+        pranzIng: "dovlecel, vinete, ceapă, ardei, roșii, mălai",
+        gustare: "Fructe uscate",
+        gustareIng: "stafide, caise uscate, curmale",
+        cina: "Paste integrale cu legume",
+        cinaIng: "paste integrale, dovlecel, morcov, sos de roșii"
+      },
+      JOI: {
+        pranz: "Tocăniță de năut cu orez brun",
+        pranzIng: "năut, ceapă, usturoi, roșii, orez brun",
+        gustare: "Banane cu unt de arahide",
+        gustareIng: "banană, unt de arahide natural",
+        cina: "Ciorbă de legume",
+        cinaIng: "ceapă, morcov, țelină, pătrunjel, cartof"
+      },
+      VINERI: {
+        pranz: "Chifteluțe de legume cu couscous",
+        pranzIng: "morcov, dovlecel, năut, couscous, condimente",
+        gustare: "Pere cu nuci",
+        gustareIng: "pere proaspete, nuci crude",
+        cina: "Supă de roșii cu busuioc",
+        cinaIng: "roșii, busuioc, ceapă, ulei de măsline"
+      }
+    },
+    EasyBox: {
+      LUNI: {
+        micDejun: "Omletă cu spanac și brânză feta",
+        micDejunIng: "ouă, spanac, brânză feta, ulei de măsline",
+        pranz: "Piept de curcan cu cartofi copți",
+        pranzIng: "piept de curcan, cartofi, usturoi, rozmarin",
+        gustare: "Iaurt cu nuci și miere",
+        gustareIng: "iaurt grecesc, nuci, miere",
+        cina: "Ciorbă de perișoare",
+        cinaIng: "carne tocată, orez, legume, borș"
+      },
+      MARTI: {
+        micDejun: "Budincă de chia cu fructe",
+        micDejunIng: "chia, lapte vegetal, banană, fructe de pădure",
+        pranz: "Somon cu broccoli și orez sălbatic",
+        pranzIng: "somon, broccoli, orez sălbatic, lămâie",
+        gustare: "Smoothie cu spanac și banană",
+        gustareIng: "spanac, banană, iaurt, semințe de in",
+        cina: "Salată cu pui și dressing de iaurt",
+        cinaIng: "piept de pui, salată verde, castraveți, iaurt"
+      },
+      MIERCURI: {
+        micDejun: "Toast cu avocado și ou",
+        micDejunIng: "pâine integrală, avocado, ou, semințe",
+        pranz: "Musaca de vinete cu carne",
+        pranzIng: "vinete, carne tocată, roșii, brânză",
+        gustare: "Măr cu unt de arahide",
+        gustareIng: "măr, unt de arahide",
+        cina: "Supa cremă de legume",
+        cinaIng: "morcov, țelină, dovlecel, ceapă, smântână"
+      },
+      JOI: {
+        micDejun: "Iaurt cu granola și miere",
+        micDejunIng: "iaurt natural, granola, miere, fructe",
+        pranz: "Tocăniță de pui cu legume",
+        pranzIng: "piept de pui, morcov, mazăre, sos de roșii",
+        gustare: "Prăjitură cu banane și ovăz",
+        gustareIng: "banană, ovăz, stafide",
+        cina: "Legume la grătar cu couscous",
+        cinaIng: "vinete, dovlecel, ardei, couscous"
+      },
+      VINERI: {
+        micDejun: "Ouă poșate pe toast cu roșii",
+        micDejunIng: "ouă, pâine integrală, roșii, avocado",
+        pranz: "Burger vegetarian cu cartofi la cuptor",
+        pranzIng: "chiflă integrală, năut, salată, cartofi",
+        gustare: "Batoane energizante cu semințe",
+        gustareIng: "semințe de dovleac, curmale, ovăz",
+        cina: "Paste cu sos pesto și roșii uscate",
+        cinaIng: "paste integrale, pesto, roșii uscate"
+      }
+    },
+    GreenBox: {
+    LUNI: {
+      micDejun: "Budincă de chia cu lapte de migdale",
+      micDejunIng: "chia, lapte de migdale, banană, scorțișoară",
+      pranz: "Tofu cu legume la wok și orez brun",
+      pranzIng: "tofu, broccoli, ardei gras, morcov, sos de soia, orez brun",
+      gustare: "Hummus cu bastonașe de legume",
+      gustareIng: "năut, tahini, usturoi, morcov, țelină, castravete",
+      cina: "Supă cremă de dovleac",
+      cinaIng: "dovleac, ceapă, cartof dulce, condimente, semințe de dovleac"
+    },
+    MARTI: {
+      micDejun: "Granola cu iaurt vegetal și fructe",
+      micDejunIng: "granola, iaurt de cocos, căpșuni, afine",
+      pranz: "Chili sin carne cu fasole roșie și orez",
+      pranzIng: "fasole roșie, porumb, roșii, ardei gras, orez, condimente",
+      gustare: "Smoothie de spanac și banană",
+      gustareIng: "spanac, banană, lapte vegetal, semințe de chia",
+      cina: "Salată caldă de quinoa cu legume",
+      cinaIng: "quinoa, dovlecel, roșii cherry, rucola, lămâie"
+    },
+    MIERCURI: {
+      micDejun: "Terci de ovăz cu fructe uscate",
+      micDejunIng: "fulgi de ovăz, lapte vegetal, stafide, caise uscate",
+      pranz: "Burger vegan cu cartofi wedges",
+      pranzIng: "chiflă integrală, burger vegetal, salată, roșii, cartofi dulci",
+      gustare: "Budincă de chia cu fructe de pădure",
+      gustareIng: "chia, lapte vegetal, fructe de pădure",
+      cina: "Tocană de linte cu legume",
+      cinaIng: "linte, morcov, ceapă, țelină, roșii, condimente"
+    },
+    JOI: {
+      micDejun: "Smoothie bowl cu fructe și nuci",
+      micDejunIng: "banană, fructe de pădure, lapte de migdale, nuci",
+      pranz: "Curry de năut cu orez basmati",
+      pranzIng: "năut, lapte de cocos, curry, roșii, orez basmati",
+      gustare: "Fructe proaspete și nuci",
+      gustareIng: "mere, pere, nuci, migdale",
+      cina: "Paste din linte cu sos de legume",
+      cinaIng: "paste din linte, dovlecei, ceapă, usturoi, roșii"
+    },
+    VINERI: {
+      micDejun: "Pâine integrală cu avocado și semințe",
+      micDejunIng: "pâine integrală, avocado, semințe de floarea-soarelui, lămâie",
+      pranz: "Wrap cu falafel și salată verde",
+      pranzIng: "lipie integrală, falafel, salată, roșii, sos tahini",
+      gustare: "Crackers din semințe cu guacamole",
+      gustareIng: "semințe de in, susan, dovleac, avocado, lămâie",
+      cina: "Supă miso cu tofu și alge",
+      cinaIng: "miso, tofu, alge wakame, ceapă verde"
+    }
+  },
+  VeggieBox: {
+    LUNI: {
+      micDejun: "Iaurt cu granola și fructe",
+      micDejunIng: "iaurt, granola, căpșuni, banană",
+      pranz: "Lasagna vegetariană",
+      pranzIng: "foi lasagna, brânză, spanac, ciuperci, roșii",
+      gustare: "Baton cu ovăz și semințe",
+      gustareIng: "fulgi de ovăz, semințe, miere",
+      cina: "Supă cremă de legume",
+      cinaIng: "morcov, cartof, țelină, smântână"
+    },
+    MARTI: {
+      micDejun: "Ouă fierte cu pâine integrală",
+      micDejunIng: "ouă, pâine integrală, roșii cherry",
+      pranz: "Cartofi la cuptor cu brânză și legume",
+      pranzIng: "cartofi, brânză, dovlecel, ceapă verde",
+      gustare: "Fructe de sezon",
+      gustareIng: "mere, pere, prune",
+      cina: "Salată cu ou și avocado",
+      cinaIng: "ou fiert, avocado, salată verde, ulei de măsline"
+    },
+    MIERCURI: {
+      micDejun: "Omletă cu legume",
+      micDejunIng: "ouă, ardei, ceapă, spanac",
+      pranz: "Quiche cu broccoli și brânză",
+      pranzIng: "broccoli, ouă, smântână, brânză",
+      gustare: "Iaurt cu miere",
+      gustareIng: "iaurt, miere",
+      cina: "Tocăniță de ciuperci",
+      cinaIng: "ciuperci, ceapă, smântână, pătrunjel"
+    },
+    JOI: {
+      micDejun: "Terci de ovăz cu lapte și fructe",
+      micDejunIng: "fulgi de ovăz, lapte, banană, stafide",
+      pranz: "Paste cu legume și brânză feta",
+      pranzIng: "paste integrale, dovlecel, roșii, feta",
+      gustare: "Smoothie cu spanac și banană",
+      gustareIng: "spanac, banană, lapte vegetal",
+      cina: "Ciorbă de legume",
+      cinaIng: "legume mixte, borș"
+    },
+    VINERI: {
+      micDejun: "Clătite cu brânză dulce",
+      micDejunIng: "făină, ouă, brânză dulce, miere",
+      pranz: "Risotto cu ciuperci",
+      pranzIng: "orez, ciuperci, ceapă, brânză",
+      gustare: "Mix de nuci și fructe uscate",
+      gustareIng: "nuci, migdale, stafide",
+      cina: "Legume la cuptor cu tofu",
+      cinaIng: "tofu, vinete, ardei, dovlecei"
+    }
+  },   MuscleBox: {
+    LUNI: {
+      micDejun: "Omletă cu albușuri și legume",
+      micDejunIng: "albușuri de ou, spanac, ardei, ceapă verde, ulei de măsline",
+      pranz: "Piept de curcan cu orez basmati și legume la abur",
+      pranzIng: "piept de curcan, orez basmati, broccoli, morcov, conopidă",
+      gustare: "Shake proteic cu banană",
+      gustareIng: "lapte, banană, pudră proteică, unt de arahide",
+      cina: "Somon la cuptor cu cartof dulce și salată",
+      cinaIng: "somon, cartof dulce, salată verde, lămâie"
+    },
+    MARTI: {
+      micDejun: "Iaurt grecesc cu ovăz și fructe",
+      micDejunIng: "iaurt grecesc, ovăz, afine, banană",
+      pranz: "Vită cu quinoa și legume sote",
+      pranzIng: "mușchi de vită, quinoa, dovlecel, ceapă, ulei de măsline",
+      gustare: "Ou fiert cu crackers integrali",
+      gustareIng: "ou, crackers integrali, avocado",
+      cina: "Tocăniță de năut cu legume și tofu",
+      cinaIng: "năut, roșii, morcov, tofu, condimente"
+    },
+    MIERCURI: {
+      micDejun: "Budincă de chia cu lapte de migdale și zmeură",
+      micDejunIng: "chia, lapte de migdale, zmeură, sirop de agave",
+      pranz: "Pui la grătar cu cartofi la cuptor și fasole verde",
+      pranzIng: "piept de pui, cartofi, fasole verde, ulei de măsline",
+      gustare: "Smoothie cu spanac și semințe de in",
+      gustareIng: "spanac, iaurt, semințe de in, măr",
+      cina: "Quinoa cu legume și brânză cottage",
+      cinaIng: "quinoa, morcov, dovlecel, brânză cottage"
+    },
+    JOI: {
+      micDejun: "Toast integral cu omletă și roșii",
+      micDejunIng: "pâine integrală, ouă, roșii, pătrunjel",
+      pranz: "Pește alb cu orez sălbatic și legume la grătar",
+      pranzIng: "file de pește, orez sălbatic, ardei, dovlecei",
+      gustare: "Batoane proteice cu curmale",
+      gustareIng: "curmale, ovăz, semințe, proteine vegetale",
+      cina: "Ciorbă de legume cu linte",
+      cinaIng: "morcov, țelină, linte, ceapă, pătrunjel"
+    },
+    VINERI: {
+      micDejun: "Ouă fierte cu avocado și roșii",
+      micDejunIng: "ouă, avocado, roșii cherry, piper",
+      pranz: "Tocană de curcan cu legume",
+      pranzIng: "curcan, morcovi, cartofi, ceapă, ardei",
+      gustare: "Mere cu unt de migdale",
+      gustareIng: "măr, unt de migdale natural",
+      cina: "Paste integrale cu legume și piept de pui",
+      cinaIng: "paste integrale, piept de pui, spanac, usturoi"
+    }
+}
+
+};
+
+  
+  function loadMenu(boxName) {
+    document.getElementById("menu-title").textContent = boxName;
+    const content = document.getElementById("menu-content");
+    const days = ["LUNI", "MARTI", "MIERCURI", "JOI", "VINERI"];
+    const box = menuData[boxName];
+    content.innerHTML = "";
+    days.forEach(day => {
+      const d = box[day] || {};
+      content.innerHTML += `
+        <div class="col">
+          <div class="card mb-4 border-0 bg-light p-3 rounded-3">
+            <div class="fw-bold text-success mb-2">${day}</div>
+            ${d.micDejun ? `<div class="mb-2"><strong>Mic Dejun:</strong> ${d.micDejun}<br><small class="text-muted">${d.micDejunIng || ''}</small></div>` : ''}
+            ${d.pranz ? `<div class="mb-2"><strong>Prânz:</strong> ${d.pranz}<br><small class="text-muted">${d.pranzIng || ''}</small></div>` : ''}
+            ${d.gustare ? `<div class="mb-2"><strong>Gustare:</strong> ${d.gustare}<br><small class="text-muted">${d.gustareIng || ''}</small></div>` : ''}
+            ${d.cina ? `<div><strong>Cină:</strong> ${d.cina}<br><small class="text-muted">${d.cinaIng || ''}</small></div>` : ''}
+          </div>
+        </div>`;
+    });
+  }
+  
+  loadMenu("SlimBox");
+  </script>
+
+  <!-- natura-chat/chatbot.html -->
+<div id="chat-window" class="hidden">
+  <div id="chat-header">
+    <div class="bot-face">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+    </div>
+    NaturaBox Chat
+  </div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-container">
+    <input type="text" id="chat-input" placeholder="Scrie o întrebare..." />
+    <button id="chat-send">➤</button>
+  </div>
+</div>
+  
+
+  
+  
+  <footer class="footer bg-dark-green text-white py-5">
+    <div class="container">
+      <div class="row gy-4 align-items-start">
+        
+        <!-- Logo & Descriere -->
+        <div class="col-lg-4 text-center text-lg-start">
+          <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-3">
+           
+            <h4 class="ms-2 mb-0 fw-bold" style="font-size: 1.8rem;">
+              <span style="text-shadow: 1px 1px #0e4d2f;">
+                <span style="color:#91cc04;">Natura</span><span style="color:#c7f264;">Box</span>
+              </span>
+            </h4>
+          </div>
+          <p class="small opacity-75">NaturaBox te ajută să mănânci echilibrat și să economisești timp, oferind meniuri variate și livrare zilnică.</p>
+        </div>
+  
+        <!-- Contact -->
+        <div class="col-lg-4 text-center text-lg-start">
+          <h6 class="text-uppercase fw-bold mb-3">Contact</h6>
+          <p class="mb-1"><i class="bi bi-telephone me-2"></i><a href="tel:+40744855543" class="text-white text-decoration-none">0744 855 543</a></p>
+          <p class="mb-1"><i class="bi bi-envelope me-2"></i><a href="mailto:contact@naturabox.ro" class="text-white text-decoration-none">contact@naturabox.ro</a></p>
+          <div>
+            <a href="#" class="text-white me-3 social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white social-icon"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+  
+        <!-- Newsletter -->
+        <div class="col-lg-4">
+          <h6 class="text-uppercase fw-bold mb-3">Abonează-te la Newsletter</h6>
+          <p class="small mb-3 text-light opacity-75">Primește rețete sănătoase, sfaturi utile și oferte exclusive direct în inbox-ul tău.</p>
+          <form class="d-flex flex-column flex-sm-row gap-2">
+            <input type="email" class="form-control rounded-pill shadow-sm" placeholder="Emailul tău..." required>
+            <button class="btn rounded-pill px-4" style="background-color: #91cc04; color: #0e4d2f;" type="submit">Abonează-te</button>
+          </form>
+        </div>
+      </div>
+  
+      <hr class="my-4 opacity-25">
+  
+      <div class="text-center small opacity-75">
+        &copy; 2025 NaturaBox. Toate drepturile rezervate.
+      </div>
+    </div>
+  </footer>
+  
+  <style>
+    .form-control::placeholder {
+      color: #ccc;
+      opacity: 0.8;
+    }
+  
+    .form-control {
+      border: 1px solid #91cc04;
+      background-color: #f9f9f9;
+    }
+  
+    .form-control:focus {
+      border-color: #185611;
+      box-shadow: 0 0 8px #91cc04;
+    }
+  
+    .bg-dark-green {
+      background-color: #0e4d2f;
+    }
+  
+    .footer a:hover {
+      color: #c7f264;
+      text-decoration: underline;
+    }
+  
+    .social-icon {
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+  
+    .social-icon:hover {
+      color: #91cc04;
+    }
+  
+    @media (max-width: 576px) {
+      .footer h4 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+  
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>

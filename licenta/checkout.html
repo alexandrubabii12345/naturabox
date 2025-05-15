@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaturaBox</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="icons d-flex align-items-center">
+      <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="mailto:info@fuelbox.ro"><i class="bi bi-envelope"></i></a>
+      <span class="text-white ms-3">| 0744 855 543</span>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white py-2">
+  <div class="container position-relative">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">ACASĂ</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="despre.html">DESPRE</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="comanda.html">COMANDĂ</a></li>
+      </ul>
+      <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="index.html">
+        <div class="d-flex align-items-center">
+          <div class="ms-2 text-center">
+            <strong style="color: #2b6824; font-size: 1.8rem;">Natura</strong><strong style="color:#91cc04; font-size: 1.8rem;">Box</strong>
+          </div>
+        </div>
+      </a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+        <li class="nav-item"><a class="nav-link fw-bold" href="menubox.html" target="_blank">MENUBOX</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="questionbox.html" target="_blank">QUESTIONBOX</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="checkout-section py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Finalizare comandă</h2>
+    <div class="row g-4">
+
+      <!-- Date livrare -->
+      <div class="col-lg-6">
+        <div class="card p-4 shadow-sm">
+          <h5 class="mb-3">Date pentru livrare</h5>
+          <form id="checkout-form">
+            <div class="mb-3">
+              <label class="form-label">Nume complet</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Adresă livrare</label>
+              <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Telefon</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+
+            <div id="card-details" class="d-none">
+              <h6 class="mb-3">Detalii card</h6>
+              <div class="mb-2">
+                <label class="form-label">Număr card</label>
+                <input type="text" class="form-control" id="card-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Nume pe card</label>
+                <input type="text" class="form-control" id="card-name">
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="form-label">Expirare</label>
+                  <input type="text" class="form-control" id="card-expiry" placeholder="MM/YY">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="form-label">CVV</label>
+                  <input type="text" class="form-control" id="card-cvv" maxlength="4">
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mt-3">Finalizează comanda</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Rezumat comandă -->
+      <div class="col-lg-6">
+        <div class="card p-4 shadow-sm">
+          <h5 class="mb-3">Comanda ta</h5>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">Meniu: <strong id="menu-name">-</strong></li>
+            <li class="list-group-item">Calorii: <strong id="menu-kcal">-</strong></li>
+            <li class="list-group-item">Persoane: <strong id="menu-persons">-</strong></li>
+            <li class="list-group-item">Zile: <strong id="menu-days">-</strong></li>
+            <li class="list-group-item">Total: <strong id="menu-total">-</strong> lei</li>
+          </ul>
+
+          <h6 class="mb-3">Metodă de plată</h6>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="payment" id="cash" value="cash" checked>
+            <label class="form-check-label" for="cash">Ramburs - plătești integral la livrare</label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="payment" id="card" value="card">
+            <label class="form-check-label" for="card">Card bancar - plata integrală online</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById('menu-name').textContent = params.get('menu') || '-';
+  document.getElementById('menu-kcal').textContent = params.get('kcal') || '-';
+  document.getElementById('menu-persons').textContent = params.get('persons') || '-';
+  document.getElementById('menu-days').textContent = params.get('days') || '-';
+  document.getElementById('menu-total').textContent = params.get('total') || '-';
+
+  const cardRadio = document.getElementById('card');
+  const cashRadio = document.getElementById('cash');
+  const cardDetails = document.getElementById('card-details');
+
+  cardRadio.addEventListener('change', () => {
+    if (cardRadio.checked) {
+      cardDetails.classList.remove('d-none');
+    }
+  });
+
+  cashRadio.addEventListener('change', () => {
+    if (cashRadio.checked) {
+      cardDetails.classList.add('d-none');
+    }
+  });
+
+  document.getElementById('checkout-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!name || !address || !phone) {
+      alert('Te rugăm să completezi toate câmpurile obligatorii.');
+      return;
+    }
+
+    if (cardRadio.checked) {
+      const cardNumber = document.getElementById('card-number').value.trim();
+      const cardName = document.getElementById('card-name').value.trim();
+      const cardExpiry = document.getElementById('card-expiry').value.trim();
+      const cardCVV = document.getElementById('card-cvv').value.trim();
+
+      if (!cardNumber || !cardName || !cardExpiry || !cardCVV) {
+        alert('Completează toate detaliile cardului.');
+        return;
+      }
+    }
+
+    alert('Comanda a fost trimisă cu succes!');
+    // Aici ai putea trimite datele către un backend
+  });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

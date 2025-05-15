@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaturaBox</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="style.css" />
+
+
+</head>
+<body>
+
+
+<!-- Topbar -->
+<div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="icons d-flex align-items-center">
+        <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="mailto:info@fuelbox.ro"><i class="bi bi-envelope"></i></a>
+        <span class="text-white ms-3">| 0744 855 543</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white py-2">
+    <div class="container position-relative">
+  
+      <!-- Hamburger pentru mobil -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Meniu stânga -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+          <li class="nav-item"><a class="nav-link fw-bold" href="index.html">ACASĂ</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="despre.html">DESPRE</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="comanda.html">COMANDĂ</a></li>
+        </ul>
+  
+        <!-- Logo centrat -->
+        <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="index.html">
+            <div class="d-flex align-items-center">
+              <div class="ms-2 text-center">
+                <strong style="color: #2b6824; font-size: 1.8rem;">Natura</strong><strong style="color:#91cc04; font-size: 1.8rem;">Box</strong>
+              </div>
+            </div>
+          </a>
+          
+  
+        <!-- Meniu dreapta -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center gap-4">
+          <li class="nav-item"><a class="nav-link fw-bold" href="menubox.html" target="_blank">MENUBOX</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="questionbox.html" target="_blank">QUESTIONBOX</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  
+  
+  <div class="carousel-container position-relative">
+    <button class="arrow left" onclick="moveSlide(-1)"><i class="bi bi-chevron-left"></i></button>
+  
+    <div class="carousel d-flex align-items-center" id="carousel">
+      <!-- box-urile vor fi generate automat de script -->
+    </div>
+  
+    <button class="arrow right" onclick="moveSlide(1)"><i class="bi bi-chevron-right"></i></button>
+  </div>
+  
+  <section class="benefits-section-with-bg">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+         
+        </div>
+        <div class="col-md-6">
+          <div class="row gy-4 mt-4 mt-md-0">
+            <div class="col-sm-6">
+              <div class="icon-box">
+                <i class="bi bi-egg-fried"></i>
+                <h5><strong>100% Proaspăt</strong></h5>
+                <p>Ingrediente naturale, proaspete și mese sigilate în fiecare zi.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="icon-box">
+                <i class="bi bi-truck"></i>
+                <h5><strong>Rapid la Tine</strong></h5>
+                <p>Bucătari profesioniști și livrare rapidă, în fiecare dimineață.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="icon-box">
+                <i class="bi bi-flower2"></i>
+                <h5><strong>Plin de Nutrienți</strong></h5>
+                <p>Diversificat, gustos, cu aport nutritiv zilnic optim.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="icon-box">
+                <i class="bi bi-heart-pulse"></i>
+                <h5><strong>Special Pentru Tine</strong></h5>
+                <p>Adaptăm mesele tale în funcție de obiectivele personale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- Secțiune Recenzii Modernă -->
+<section class="testimonials-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Ce spun clienții noștri</h2>
+  
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+  
+          <!-- Recenzie 1 -->
+          <div class="carousel-item active">
+            <div class="testimonial-card mx-auto p-4 shadow">
+              <i class="bi bi-chat-square-quote testimonial-icon"></i>
+              <p class="testimonial-text">
+                NaturaBox m-a ajutat enorm. Mâncare gustoasă și livrată la timp în fiecare dimineață.
+              </p>
+              <h5 class="testimonial-author">Corina</h5>
+            </div>
+          </div>
+  
+          <!-- Recenzie 2 -->
+          <div class="carousel-item">
+            <div class="testimonial-card mx-auto p-4 shadow">
+              <i class="bi bi-chat-square-quote testimonial-icon"></i>
+              <p class="testimonial-text">
+                Super echilibru între nutrienți și gust! Perfect pentru stilul meu de viață activ.
+              </p>
+              <h5 class="testimonial-author">Alexandru</h5>
+            </div>
+          </div>
+  
+          <!-- Recenzie 3 -->
+          <div class="carousel-item">
+            <div class="testimonial-card mx-auto p-4 shadow">
+              <i class="bi bi-chat-square-quote testimonial-icon"></i>
+              <p class="testimonial-text">
+                Mă simt mai energică și organizată de când folosesc NaturaBox. Recomand cu drag!
+              </p>
+              <h5 class="testimonial-author">Ioana</h5>
+            </div>
+          </div>
+  
+          <!-- Recenzie 4 -->
+          <div class="carousel-item">
+            <div class="testimonial-card mx-auto p-4 shadow">
+              <i class="bi bi-chat-square-quote testimonial-icon"></i>
+              <p class="testimonial-text">
+                Am scăpat de stresul gătitului. Totul vine pregătit, delicios și fresh.
+              </p>
+              <h5 class="testimonial-author">Mihai</h5>
+            </div>
+          </div>
+  
+          <!-- Recenzie 5 -->
+          <div class="carousel-item">
+            <div class="testimonial-card mx-auto p-4 shadow">
+              <i class="bi bi-chat-square-quote testimonial-icon"></i>
+              <p class="testimonial-text">
+                Serviciu impecabil! Mâncare diversificată și consistentă, livrată fără greș.
+              </p>
+              <h5 class="testimonial-author">Andreea</h5>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Butoane indicatori -->
+        <div class="carousel-indicators mt-4">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="why-section" style="background: url('img/background/salmon.jpg') no-repeat center center/cover; padding: 100px 0;">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between text-white">
+      <div class="left col-md-6">
+        <h2 class="fw-bold mb-4" style="font-size: 2.8rem;">De ce să alegi <span style="color: #91cc04;">NaturaBox</span></h2>
+        <p class="lead mb-4">
+          NaturaBox te ajută să ai o siluetă de invidiat și o alimentație corectă oferind meniuri variate create special pentru tine. Calculăm exact câte proteine, carbohidrați și grăsimi are nevoie organismul tău, zilnic.
+        </p>
+        <a href="#" class="btn btn-success px-4 py-2 fw-bold" style="border-radius: 30px; background-color: #0e4d2f; border: none;">Află mai multe</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="steps-section py-5" style="background-color: #000; color: #fff;">
+    <div class="container">
+      <div class="row text-center">
+  
+        <!-- Pas 1: Selecteaza Meniul -->
+        <div class="col-md-3 mb-4">
+          <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none" style="margin-bottom: 15px;">
+            <style>
+              .cls-1 { fill: none; stroke: #91cc04; stroke-miterlimit: 10; stroke-width: 1.91px; }
+            </style>
+            <polyline class="cls-1" points="11.04 20.59 1.5 20.59 1.5 1.5 16.77 1.5 16.77 9.14"/>
+            <line class="cls-1" x1="4.36" y1="5.32" x2="6.27" y2="5.32"/>
+            <line class="cls-1" x1="8.18" y1="5.32" x2="13.91" y2="5.32"/>
+            <line class="cls-1" x1="4.36" y1="9.14" x2="6.27" y2="9.14"/>
+            <line class="cls-1" x1="8.18" y1="9.14" x2="13.91" y2="9.14"/>
+            <line class="cls-1" x1="4.36" y1="12.95" x2="6.27" y2="12.95"/>
+            <line class="cls-1" x1="8.18" y1="12.95" x2="13.91" y2="12.95"/>
+            <ellipse class="cls-1" cx="17.73" cy="18.68" rx="4.77" ry="3.82"/>
+            <path class="cls-1" d="M20.11,11h1.43v1.43a2.39,2.39,0,0,1-2.39,2.39H17.73V13.43A2.39,2.39,0,0,1,20.11,11Z"/>
+            <path class="cls-1" d="M14.86,11.05h0a2.86,2.86,0,0,1,2.87,2.86v.95"/>
+          </svg>
+          <h5 class="fw-bold">Selectează meniul</h5>
+          <p class="small">Alege meniul potrivit și nivelul caloric dorit.</p>
+        </div>
+  
+        <!-- Pas 2: Comanda -->
+        <div class="col-md-3 mb-4">
+          <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none" style="margin-bottom: 15px;">
+            <circle cx="12" cy="12" r="10" stroke="#91cc04" stroke-width="2" fill="none"/>
+            <path d="M8 12h8M12 8v8" stroke="#91cc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h5 class="fw-bold">Plasează comanda</h5>
+          <p class="small">Comandă rapid, direct de pe site sau telefon.</p>
+        </div>
+  
+        <!-- Pas 3: Confirmare Email -->
+        <div class="col-md-3 mb-4">
+          <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none" style="margin-bottom: 15px;">
+            <rect x="2" y="4" width="20" height="16" rx="2" ry="2" stroke="#91cc04" stroke-width="2" fill="none"/>
+            <path d="M2 6l10 7l10-7" stroke="#91cc04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h5 class="fw-bold">Confirmare pe email</h5>
+          <p class="small">Primești toate detaliile pe email.</p>
+        </div>
+  
+        <!-- Pas 4: Feedback -->
+        <div class="col-md-3 mb-4">
+          <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none" style="margin-bottom: 15px;">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#91cc04" stroke-width="2" fill="none"/>
+          </svg>
+          <h5 class="fw-bold">Lasă-ne feedback</h5>
+          <p class="small">Ajută-ne să fim în fiecare zi mai buni!</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+
+
+  
+  <footer class="footer bg-dark-green text-white py-5">
+    <div class="container">
+      <div class="row gy-4 align-items-start">
+        
+        <!-- Logo & Descriere -->
+        <div class="col-lg-4 text-center text-lg-start">
+          <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-3">
+           
+            <h4 class="ms-2 mb-0 fw-bold" style="font-size: 1.8rem;">
+              <span style="text-shadow: 1px 1px #0e4d2f;">
+                <span style="color:#91cc04;">Natura</span><span style="color:#c7f264;">Box</span>
+              </span>
+            </h4>
+          </div>
+          <p class="small opacity-75">NaturaBox te ajută să mănânci echilibrat și să economisești timp, oferind meniuri variate și livrare zilnică.</p>
+        </div>
+  
+        <!-- Contact -->
+        <div class="col-lg-4 text-center text-lg-start">
+          <h6 class="text-uppercase fw-bold mb-3">Contact</h6>
+          <p class="mb-1"><i class="bi bi-telephone me-2"></i><a href="tel:+40744855543" class="text-white text-decoration-none">0744 855 543</a></p>
+          <p class="mb-1"><i class="bi bi-envelope me-2"></i><a href="mailto:contact@naturabox.ro" class="text-white text-decoration-none">contact@naturabox.ro</a></p>
+          <div>
+            <a href="#" class="text-white me-3 social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white social-icon"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+  
+        <!-- Newsletter -->
+        <div class="col-lg-4">
+          <h6 class="text-uppercase fw-bold mb-3">Abonează-te la Newsletter</h6>
+          <p class="small mb-3 text-light opacity-75">Primește rețete sănătoase, sfaturi utile și oferte exclusive direct în inbox-ul tău.</p>
+          <form class="d-flex flex-column flex-sm-row gap-2">
+            <input type="email" class="form-control rounded-pill shadow-sm" placeholder="Emailul tău..." required>
+            <button class="btn rounded-pill px-4" style="background-color: #91cc04; color: #0e4d2f;" type="submit">Abonează-te</button>
+          </form>
+        </div>
+      </div>
+  
+      <hr class="my-4 opacity-25">
+  
+      <div class="text-center small opacity-75">
+        &copy; 2025 NaturaBox. Toate drepturile rezervate.
+      </div>
+    </div>
+  </footer>
+  
+  <style>
+    .form-control::placeholder {
+      color: #ccc;
+      opacity: 0.8;
+    }
+  
+    .form-control {
+      border: 1px solid #91cc04;
+      background-color: #f9f9f9;
+    }
+  
+    .form-control:focus {
+      border-color: #185611;
+      box-shadow: 0 0 8px #91cc04;
+    }
+  
+    .bg-dark-green {
+      background-color: #0e4d2f;
+    }
+  
+    .footer a:hover {
+      color: #c7f264;
+      text-decoration: underline;
+    }
+  
+    .social-icon {
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+  
+    .social-icon:hover {
+      color: #91cc04;
+    }
+  
+    @media (max-width: 576px) {
+      .footer h4 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+  
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
